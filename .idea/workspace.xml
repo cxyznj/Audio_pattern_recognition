@@ -11,11 +11,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="audioProcess.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="audioProcess.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/audioProcess.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+            <state relative-caret-position="327">
+              <caret line="62" column="22" selection-start-line="62" selection-start-column="22" selection-end-line="62" selection-end-column="22" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -23,17 +23,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="__main__.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="__main__.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/__main__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="128" lean-forward="true" selection-start-line="128" selection-end-line="128" />
+            <state relative-caret-position="365">
+              <caret line="69" column="60" selection-start-line="69" selection-start-column="60" selection-end-line="69" selection-end-column="60" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
-                <element signature="e#138#821#0" />
-                <element signature="e#2149#2460#0" />
                 <element signature="e#1306#1893#0" />
-                <element signature="e#2094#3422#0" />
+                <element signature="e#1963#3316#0" />
                 <element signature="e#3626#4963#0" />
                 <element signature="e#5518#6343#0" />
               </folding>
@@ -87,8 +85,8 @@
       <list>
         <option value="$PROJECT_DIR$/CNN.py" />
         <option value="$PROJECT_DIR$/Model.py" />
-        <option value="$PROJECT_DIR$/audioProcess.py" />
         <option value="$PROJECT_DIR$/__main__.py" />
+        <option value="$PROJECT_DIR$/audioProcess.py" />
       </list>
     </option>
   </component>
@@ -102,14 +100,11 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="ProjectPane" />
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -269,10 +264,8 @@
           <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
-            <element signature="e#138#821#0" />
-            <element signature="e#2149#2460#0" />
             <element signature="e#1306#1893#0" />
-            <element signature="e#2094#3422#0" />
+            <element signature="e#1963#3316#0" />
             <element signature="e#3626#4963#0" />
             <element signature="e#5518#6343#0" />
           </folding>
@@ -312,10 +305,8 @@
           <caret line="185" column="26" lean-forward="true" selection-start-line="185" selection-start-column="26" selection-end-line="185" selection-end-column="26" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
-            <element signature="e#138#821#0" />
-            <element signature="e#2149#2460#0" />
             <element signature="e#1306#1893#0" />
-            <element signature="e#2094#3422#0" />
+            <element signature="e#1963#3316#0" />
             <element signature="e#3626#4963#0" />
             <element signature="e#5518#6343#0" />
           </folding>
@@ -338,10 +329,8 @@
           <caret line="82" column="23" lean-forward="true" selection-start-line="82" selection-start-column="23" selection-end-line="82" selection-end-column="23" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
-            <element signature="e#138#821#0" />
-            <element signature="e#2149#2460#0" />
             <element signature="e#1306#1893#0" />
-            <element signature="e#2094#3422#0" />
+            <element signature="e#1963#3316#0" />
             <element signature="e#3626#4963#0" />
             <element signature="e#5518#6343#0" />
           </folding>
@@ -374,10 +363,8 @@
           <caret line="160" column="20" selection-start-line="160" selection-start-column="20" selection-end-line="160" selection-end-column="20" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
-            <element signature="e#138#821#0" />
-            <element signature="e#2149#2460#0" />
             <element signature="e#1306#1893#0" />
-            <element signature="e#2094#3422#0" />
+            <element signature="e#1963#3316#0" />
             <element signature="e#3626#4963#0" />
             <element signature="e#5518#6343#0" />
           </folding>
@@ -401,28 +388,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/audioProcess.py">
+    <entry file="file://$PROJECT_DIR$/__main__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+        <state relative-caret-position="365">
+          <caret line="69" column="60" selection-start-line="69" selection-start-column="60" selection-end-line="69" selection-end-column="60" />
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#1306#1893#0" />
+            <element signature="e#1963#3316#0" />
+            <element signature="e#3626#4963#0" />
+            <element signature="e#5518#6343#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/__main__.py">
+    <entry file="file://$PROJECT_DIR$/audioProcess.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="128" lean-forward="true" selection-start-line="128" selection-end-line="128" />
+        <state relative-caret-position="327">
+          <caret line="62" column="22" selection-start-line="62" selection-start-column="22" selection-end-line="62" selection-end-column="22" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
-            <element signature="e#138#821#0" />
-            <element signature="e#2149#2460#0" />
-            <element signature="e#1306#1893#0" />
-            <element signature="e#2094#3422#0" />
-            <element signature="e#3626#4963#0" />
-            <element signature="e#5518#6343#0" />
+            <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>

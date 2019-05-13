@@ -48,7 +48,37 @@ def predict(audio_path):
     for i in range(len(files)):
         print("----Predict the %d file:%s----" % (i + 1, files[i]))
         result = model.predict(Data[i])
+        result = result[0].numpy()
         print(result)
+
+        start_time = 0
+        end_time = 0
+        start_flag = False
+        for j in range(len(result)):
+            if(result[j] == 1):
+                if not start_flag:
+                    start_flag = True
+                    start_time = end_time = j
+            else:
+                if start_flag:
+                    start_flag = False
+                    end_time = j
+                    print("time = ", start_time, end_time)
+                    fname = str(start_time) + '_' + str(end_time) + '.wav'
+                    if not os.path.exists(files[i][:-4] + 'output'):
+                        os.mkdir(files[i][:-4] + 'output')
+                    audioProcess.cut_audio(files[i], files[i][:-4] + 'output' +  '/' + fname, start_time*1000, end_time*1000)
+        if start_flag:
+            end_time = len(result)
+            print("time = ", start_time, end_time)
+            fname = str(start_time) + '_' + str(end_time) + '.wav'
+            if not os.path.exists(files[i][:-4] + 'output'):
+                os.mkdir(files[i][:-4] + 'output')
+            audioProcess.cut_audio(files[i], files[i][:-4] + 'output' + '/' + fname, start_time * 1000, end_time * 1000)
+
+
+
+
 
 
 def test(pos_path, neg_path):
@@ -209,6 +239,6 @@ def get_predictdata(audio_path):
 
 
 if __name__ == "__main__":
-    train("audio/human", "audio/noise")
-    # predict("audio/test")
+    # train("audio/human", "audio/noise")
+    predict("audio/test")
     # test("audio/human", "audio/noise")
