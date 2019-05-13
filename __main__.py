@@ -6,7 +6,7 @@ import os
 import numpy as np
 
 def train(pos_path, neg_path):
-    model = Model.model(enum=5)
+    model = Model.model(enum=3)
     if os.path.exists('model/cnn.pth'):
         model.load_model()
 
@@ -32,45 +32,6 @@ def train(pos_path, neg_path):
 
     model.save_model()
 
-def train2():
-    pos_path = "audio/test1/"
-    neg_path = "audio/test2/"
-    pos_files = audioProcess.getfilename(pos_path)
-    neg_files = audioProcess.getfilename(neg_path)
-
-    files = pos_files + neg_files
-    shuffle(files)
-    print(files)
-
-    model = Model.model(enum=3)
-    if os.path.exists('model/cnn.pth'):
-        model.load_model()
-
-    for i, file in enumerate(files):
-        print("----Training the %d file:%s----" % (i + 1, file))
-        if file in pos_files:
-            mfccs = audioProcess.get_feature(pos_path + file)
-            data, label = audioProcess.process_mfccs(mfccs, type=1, feature_len=32)
-        else:
-            mfccs = audioProcess.get_feature(neg_path + file)
-            data, label = audioProcess.process_mfccs(mfccs, type=0, feature_len=32)
-
-        # 音频长度短于阈值，舍弃之
-        if len(label) <= 0:
-            print("Drop file %s cause length of the voice is too short!" % file)
-            continue
-
-        data = torch.from_numpy(data)
-        data = data.type(torch.FloatTensor)  # 转Double
-        label = torch.from_numpy(label)
-        label = label.type(torch.LongTensor)  # 转Double
-
-        model.train_model(data, label)
-        if ((i + 1) % 10 == 0):
-            print("Save model in i=%d" % (i + 1))
-            model.save_model()
-    model.save_model()
-
 
 def predict(audio_path):
     Data, Label, files = get_predictdata(audio_path)
@@ -84,30 +45,8 @@ def predict(audio_path):
         result = model.predict(Data[i])
         print(result)
 
-    '''
-    for i, file in enumerate(files):
-        print("----Testing the %d file:%s----" % (i + 1, file))
-        mfccs = audioProcess.get_feature(file)
-        data, label = audioProcess.process_mfccs(mfccs, type=1, feature_len=43)
 
-        # 音频长度短于阈值，舍弃之
-        if len(label) <= 0:
-            print("Drop file %s cause length of the voice is too short!" % file)
-            continue
-
-        data = torch.from_numpy(data)
-        data = data.type(torch.FloatTensor)  # 转Double
-        label = torch.from_numpy(label)
-        label = label.type(torch.LongTensor)  # 转Double
-
-        # model.test_model(data, label)
-        result = model.predict(data)
-        print(result)
-    '''
-
-
-def test():
-    audio_path = "audio/test/"
+def test(audio_path):
     files = audioProcess.getfilename(audio_path)
 
     model = Model.model(enum=1)
@@ -136,8 +75,6 @@ def test():
 
 
 def get_traindata(pos_path, neg_path, batch_size = 128):
-    #pos_path = "audio/human"
-    #neg_path = "audio/noise"
     pos_files = audioProcess.getfilename(pos_path)
     neg_files = audioProcess.getfilename(neg_path)
 
@@ -223,4 +160,5 @@ def get_predictdata(audio_path):
 
 if __name__ == "__main__":
     predict("audio/test")
-    #train("audio/human", "audio/noise")
+    # test("audio/test/")
+    # train("audio/human", "audio/noise")
