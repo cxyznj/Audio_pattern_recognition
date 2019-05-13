@@ -26,10 +26,16 @@
       <file leaf-file-name="__main__.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/__main__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="162" column="23" lean-forward="true" selection-start-line="162" selection-start-column="23" selection-end-line="162" selection-end-column="23" />
+            <state relative-caret-position="270">
+              <caret line="128" lean-forward="true" selection-start-line="128" selection-end-line="128" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
+                <element signature="e#138#821#0" />
+                <element signature="e#2149#2460#0" />
+                <element signature="e#1306#1893#0" />
+                <element signature="e#2094#3422#0" />
+                <element signature="e#3626#4963#0" />
+                <element signature="e#5518#6343#0" />
               </folding>
             </state>
           </provider>
@@ -71,7 +77,10 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="WARN_ABOUT_CRLF" value="false" />
+    <option name="WARN_ABOUT_DETACHED_HEAD" value="false" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -100,7 +109,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -201,8 +210,8 @@
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.15690866" />
       <window_info anchor="bottom" id="TODO" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" />
-      <window_info anchor="right" id="Run" order="3" weight="0.51834506" />
+      <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" weight="0.32854864" />
+      <window_info active="true" anchor="right" id="Run" order="3" visible="true" weight="0.51834506" />
       <window_info anchor="bottom" id="Version Control" order="1" />
       <window_info anchor="bottom" id="Python Console" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -223,7 +232,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -260,6 +269,12 @@
           <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#138#821#0" />
+            <element signature="e#2149#2460#0" />
+            <element signature="e#1306#1893#0" />
+            <element signature="e#2094#3422#0" />
+            <element signature="e#3626#4963#0" />
+            <element signature="e#5518#6343#0" />
           </folding>
         </state>
       </provider>
@@ -297,6 +312,12 @@
           <caret line="185" column="26" lean-forward="true" selection-start-line="185" selection-start-column="26" selection-end-line="185" selection-end-column="26" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#138#821#0" />
+            <element signature="e#2149#2460#0" />
+            <element signature="e#1306#1893#0" />
+            <element signature="e#2094#3422#0" />
+            <element signature="e#3626#4963#0" />
+            <element signature="e#5518#6343#0" />
           </folding>
         </state>
       </provider>
@@ -317,6 +338,12 @@
           <caret line="82" column="23" lean-forward="true" selection-start-line="82" selection-start-column="23" selection-end-line="82" selection-end-column="23" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#138#821#0" />
+            <element signature="e#2149#2460#0" />
+            <element signature="e#1306#1893#0" />
+            <element signature="e#2094#3422#0" />
+            <element signature="e#3626#4963#0" />
+            <element signature="e#5518#6343#0" />
           </folding>
         </state>
       </provider>
@@ -347,6 +374,12 @@
           <caret line="160" column="20" selection-start-line="160" selection-start-column="20" selection-end-line="160" selection-end-column="20" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#138#821#0" />
+            <element signature="e#2149#2460#0" />
+            <element signature="e#1306#1893#0" />
+            <element signature="e#2094#3422#0" />
+            <element signature="e#3626#4963#0" />
+            <element signature="e#5518#6343#0" />
           </folding>
         </state>
       </provider>
@@ -380,10 +413,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/__main__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="162" column="23" lean-forward="true" selection-start-line="162" selection-start-column="23" selection-end-line="162" selection-end-column="23" />
+        <state relative-caret-position="270">
+          <caret line="128" lean-forward="true" selection-start-line="128" selection-end-line="128" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#138#821#0" />
+            <element signature="e#2149#2460#0" />
+            <element signature="e#1306#1893#0" />
+            <element signature="e#2094#3422#0" />
+            <element signature="e#3626#4963#0" />
+            <element signature="e#5518#6343#0" />
           </folding>
         </state>
       </provider>
