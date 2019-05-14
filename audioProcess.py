@@ -2,6 +2,7 @@ import librosa
 import os
 import numpy as np
 import pydub
+from aip import AipSpeech
 
 def get_feature(filename):
     y, sr = librosa.load(filename)
@@ -54,7 +55,7 @@ def getfilename(file_dir):
 
 
 def cut_audio(wav_path, part_wav_path, start_time, end_time):
-    addition_time = 240
+    addition_time = 495
     start_time = int(start_time)
     end_time = int(end_time)
     if start_time > addition_time:
@@ -63,11 +64,41 @@ def cut_audio(wav_path, part_wav_path, start_time, end_time):
         start_time = 0
     end_time += addition_time
 
-    sound = pydub.AudioSegment.from_mp3(wav_path)
+    sound = pydub.AudioSegment.from_wav(wav_path)
+    sound = sound.set_channels(1)
+    sound = sound.set_frame_rate(16000)
     word = sound[start_time:end_time]
 
-    word.export(part_wav_path, format="wav")
+    word.export(part_wav_path, format="wav", codec="pcm", bitrate='256k')
+    # word.export(part_wav_path, format="wav", bitrate='32k')
 
+def voice_to_text(filename):
+    APP_ID = '16242951'
+    API_KEY = 'Lblvx1OnWkjvNdNiIczGnoGP'
+    SECRET_KEY = 'ErY9rSO3Sz0VGMGzo9UbBFzZDDfSwbW3'
+
+    client = AipSpeech(APP_ID, API_KEY, SECRET_KEY)
+
+    # 读取文件
+    def get_file_content(filePath):
+        with open(filePath, 'rb') as fp:
+            return fp.read()
+
+    # 识别本地文件
+    result = client.asr(get_file_content(filename), 'wav', 16000, {
+        'dev_pid': 1537,
+    })
+
+    filename = filename[:-4] + '.txt'
+
+    with open(filename, 'w') as fileobject:
+        if result.get('err_msg') == 'success.':
+            fileobject.write(result.get('result')[0])
+        else:
+            fileobject.write("err_msg:" + result.get('err_msg') + '\n' + "err_no:" + str(result.get("err_no")))
+        fileobject.close()
+
+    return result
 
 if __name__ == "__main__":
     pass

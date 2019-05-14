@@ -61,23 +61,27 @@ def predict(audio_path):
                     start_time = end_time = j
             else:
                 if start_flag:
+                    # 允许有一秒噪声容忍
+                    if j < len(result)-1:
+                        if result[j+1] == 1:
+                            continue
+                
                     start_flag = False
                     end_time = j
                     print("time = ", start_time, end_time)
-                    fname = str(start_time) + '_' + str(end_time) + '.wav'
+                    fname = files[i][:-4] + 'output' + '/' + str(start_time) + '_' + str(end_time) + '.wav'
                     if not os.path.exists(files[i][:-4] + 'output'):
                         os.mkdir(files[i][:-4] + 'output')
-                    audioProcess.cut_audio(files[i], files[i][:-4] + 'output' +  '/' + fname, start_time*1000, end_time*1000)
+                    audioProcess.cut_audio(files[i], fname, start_time*1000, end_time*1000)
+                    audioProcess.voice_to_text(fname)
         if start_flag:
             end_time = len(result)
-            print("time = ", start_time, end_time)
-            fname = str(start_time) + '_' + str(end_time) + '.wav'
+            print("time =", start_time, end_time)
+            fname = files[i][:-4] + 'output' + '/' + str(start_time) + '_' + str(end_time) + '.wav'
             if not os.path.exists(files[i][:-4] + 'output'):
                 os.mkdir(files[i][:-4] + 'output')
-            audioProcess.cut_audio(files[i], files[i][:-4] + 'output' + '/' + fname, start_time * 1000, end_time * 1000)
-
-
-
+            audioProcess.cut_audio(files[i], fname, start_time * 1000, end_time * 1000)
+            audioProcess.voice_to_text(fname)
 
 
 
