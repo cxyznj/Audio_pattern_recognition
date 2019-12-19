@@ -14,7 +14,6 @@ def get_feature(filename):
 def process_mfccs(mfccs, type = 0, feature_len = 43):
     n, m = mfccs.shape
     # 43行特征值代表一秒，以一秒为基础单位
-    # 32个特征 -> 0.743s
     k = int(n/feature_len)
     data = []
     for i in range(k):
@@ -26,14 +25,16 @@ def process_mfccs(mfccs, type = 0, feature_len = 43):
 
     if type == 0:
         label = np.zeros(k)
-    else:
+    elif type == 1:
         label = np.ones(k)
 
     return data, label
 
 
 def getfilename(file_dir):
-    #print("----begin----")
+    if os.path.isfile(file_dir):
+        return [file_dir]
+
     filelist = []
     for root, dirs, files in os.walk(file_dir):
         #print("root = ", root)
@@ -46,16 +47,13 @@ def getfilename(file_dir):
             for dir in dirs:
                 dirfiles = getfilename(root + '/' + dir)
                 filelist.extend(dirfiles)
-
         break
-
-    #print("filelist = ", filelist)
 
     return filelist
 
 
 def cut_audio(wav_path, part_wav_path, start_time, end_time):
-    addition_time = 495
+    addition_time = 245
     start_time = int(start_time)
     end_time = int(end_time)
     if start_time > addition_time:
@@ -70,7 +68,7 @@ def cut_audio(wav_path, part_wav_path, start_time, end_time):
     word = sound[start_time:end_time]
 
     word.export(part_wav_path, format="wav", codec="pcm", bitrate='256k')
-    # word.export(part_wav_path, format="wav", bitrate='32k')
+
 
 def voice_to_text(filename):
     APP_ID = '16242951'
@@ -95,7 +93,7 @@ def voice_to_text(filename):
         if result.get('err_msg') == 'success.':
             fileobject.write(result.get('result')[0])
         else:
-            fileobject.write("err_msg:" + result.get('err_msg') + '\n' + "err_no:" + str(result.get("err_no")))
+            fileobject.write("err_msg:" + str(result.get('err_msg')) + '\n' + "err_no:" + str(result.get("err_no")))
         fileobject.close()
 
     return result
